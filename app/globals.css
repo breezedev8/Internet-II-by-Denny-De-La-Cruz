@@ -155,19 +155,24 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  ::selection {
-    @apply bg-primary text-primary-foreground;
-  }
+/* Reglas nativas en reemplazo de @apply */
+* {
+  border-color: var(--border);
+  outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
 
 @media (prefers-reduced-motion: reduce) {

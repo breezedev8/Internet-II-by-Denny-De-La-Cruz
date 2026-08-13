@@ -22,3 +22,10 @@ const nextConfig = {
 }
 
 export default nextConfig
+
+// postcss.config.mjs
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
